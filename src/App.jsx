@@ -272,6 +272,116 @@ export default function App() {
           </div>
         </motion.div>
 
+        {/* Hero Section with Profile Picture */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="grid lg:grid-cols-2 gap-16 items-center py-20"
+        >
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[11px] font-black uppercase tracking-[0.25em] text-blue-700 bg-white/50 backdrop-blur-md rounded-full border border-white shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Data Analyst & Problem Solver
+              </div>
+              <h2 className="text-5xl sm:text-6xl font-black text-slate-950 leading-tight tracking-tighter mb-6">
+                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Caleb</span>
+              </h2>
+              <p className="text-xl text-slate-600 font-medium leading-relaxed">
+                A passionate and detail-oriented Data Analyst with expertise in financial operations, data insights, and solving real-world problems through technology.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <CustomButton onClick={handleEmailClick} className="rounded-2xl px-8 py-5 text-base">
+                <Mail className="mr-2 h-5 w-5" /> Get in Touch
+              </CustomButton>
+              <CustomButton variant="outline" className="rounded-2xl px-8 py-5 text-base">
+                Learn More
+              </CustomButton>
+            </div>
+          </div>
+
+          {/* Right - Profile Picture Space */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+            className="relative flex items-center justify-center"
+          >
+            {/* Animated Background Glow - Multiple Layers */}
+            <motion.div
+              animate={{ scale: [1, 1.15, 1] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/40 to-blue-400/20 blur-3xl"
+            />
+            <motion.div
+              animate={{ scale: [1.1, 1, 1.1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute inset-0 rounded-full bg-gradient-to-tl from-amber-400/20 to-transparent blur-2xl"
+            />
+            
+            {/* Circular Frame with Enhanced Design */}
+            <div className="relative w-80 h-80 rounded-full overflow-hidden group">
+              {/* Outer Ring - Gradient Border */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 p-1 shadow-2xl shadow-blue-600/30">
+                {/* Inner White Ring */}
+                <div className="absolute inset-1 rounded-full bg-white/80 backdrop-blur-sm" />
+              </div>
+              
+              {/* Profile Image */}
+              <img 
+                src="/caleb-profile.jpg" 
+                alt="Caleb Okereke" 
+                className="relative w-full h-full object-cover object-center rounded-full z-10"
+              />
+              
+              {/* Overlay Gradient for depth */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-slate-900/10 via-transparent to-transparent z-20 pointer-events-none" />
+            </div>
+            
+            {/* Certification Badge - Top Right */}
+            <motion.div
+              animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-0 right-0 z-30"
+            >
+              <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-xl shadow-blue-600/30 px-5 py-3 border-2 border-blue-600 backdrop-blur-sm">
+                <div className="text-[9px] font-black uppercase tracking-widest text-blue-600 mb-1">✓ Certified</div>
+                <div className="text-sm font-black text-slate-900 whitespace-nowrap">Data Analyst</div>
+              </div>
+            </motion.div>
+
+            {/* Expertise Badge - Bottom Left */}
+            <motion.div
+              animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute bottom-0 left-0 z-30"
+            >
+              <div className="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-xl shadow-blue-600/30 px-5 py-3 border-2 border-blue-600 backdrop-blur-sm">
+                <div className="text-[9px] font-black uppercase tracking-widest text-blue-600 mb-1">⚡ Expertise</div>
+                <div className="text-sm font-black text-slate-900 whitespace-nowrap">Financial Ops</div>
+              </div>
+            </motion.div>
+
+            {/* Floating Accent Dots */}
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -top-8 -right-8 w-16 h-16 bg-blue-400/20 rounded-full blur-xl"
+            />
+            <motion.div
+              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+              className="absolute -bottom-8 -left-8 w-20 h-20 bg-blue-500/15 rounded-full blur-xl"
+            />
+          </motion.div>
+        </motion.div>
+
         {/* About Sections */}
         <div className="grid gap-10">
 
